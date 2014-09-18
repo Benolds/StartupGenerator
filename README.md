@@ -1,0 +1,1 @@
+Satirically generates startup names and job postings.
