@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<style type="text/css">
+/* <![CDATA[ */
+body {
+ background: #fff;
+ color: #000;
+ margin: 0 0 0 24pt;
+ font-family: Optima, sans-serif;
+ font-size: 13pt;
+}
+a {
+ color: #117;
+ text-decoration: none;
+}
+/* ]]> */
+</style>
+<script type="text/javascript">
+var t = 0;
+var buzzword = ["disruptive", "passionate", "code ninja", "changing the world", "innovative", "gamification", "social", "hacker", "freemium", "big data", "mobile", "creative", "Internet of things", "wearable computing", "rockstar coder", "MOOC", "cross-platform", "emphemeral sharing", "hyperconnected", "virtual reality", "dynamic", "paradigm", "behavioral", "growth hacker", "end-user", "evangelist", "market-leading", "next-generation", "epic", "trusted", "open and connected", "monetize" ,"robust", "solution", "localized", "social graph", "semantic web", "crowdfunding", "social media optimization", "meme", "project based learning (PBL)", "user generated content (UGC)", "github", "Software as a Service (SaaS)", "smartphone", "workforce", "crowdsourced", "VC-backed", "analytics", "Silicon Valley", "SCRUM", "agile development", "data-driven", "open source"];
+
+//looking for a passionate, rockstar code ninja with skills in node.js, coffeescript, CSS, scheme, C#, for our startup: a disruptive, localized big data startup, committed to creative problem solving to change the world
+
+//impressive figures: team size of 4, 3 billion events per month, help 900+ companies, 100 million users and counting
+
+//location: Silicon Valley, New York City, Chicago, Boston, San Francisco
+//benefits: competitive salary, good food, weekly catering, gym, board game night, ...
+
+var company_description_nouns = ["Gamification", "Wearable Computing", "Massive Open Online Course (MOOC)", "The Internet of Things", "Ephemeral Sharing", "Virtual Reality", "Monetization", "Crowdfunding", "Social Graph", "Semantic Web", "Social Media Optimization", "Big Data", "Software as a Service (SaaS)", "Digital Marketing Solutions", "Social Media Management", "Online Learning", "Mobile Payments", "Social Mobile Games", "Relationship Marketing"];
+
+var company_description_adjectives = ["disruptive", "social", "freemium", "mobile", "creative", "dynamic", "behavioral", "market-leading", "next-generation", "trusted", "robust", "localized", "crowdfunded", "VC-backed", "data-driven", "open source", "agile"];
+
+var job_position = ["developer", "coder", "artist", "growth hacker", "designer", "graphic designer", "web developer", "engineer", "product manager", "fullstack developer", "code-ninja", "rockstar-developer", "code-wizard", "DevOps engineer"];
+
+var job_location = ["Silicon Valley", "New York City", "Chicago", "Boston", "San Francisco", "Austin", "London", "Mountain View", "Palo Alto", "Seattle"];
+
+var desired_skills = ["UI/UX", "Node.js", "HTML5", "CSS", "Coffeescript", "Ruby on Rails", "iOS Development", "Android Development", "rapid prototyping", "wireframing", "Python", "C++", "Javascript", "jQuery", "Django", "Cocoa", "Java", "MySQL", "A/B testing", "graphic design", "Backbone.js", "Databases", "Networking", "Data Visualization"];
+
+var desired_adjectives = ["passionate", "creative", "talented", "driven", "versatile", "highly-motivated", "intelligent", "well-rounded", "fun and hard-working"];
+
+var mission_statement = ["Our mission is nothing less than to change the world.", "We are committed to building the next major franchise in technology.", "Join us if you want to reinvent the future.", "We are transforming the way people live their lives.", "We believe you can make a difference.", "We are making a difference.", "We foster a fun, casual, but ambitious culture.", "Our vision is to develop the future of technology.", "Our belief is that science, technology, and a passion for excellence can make the world a better place.", "We're focused on bringing innovative products and services to market.", "We believe technology should never limit anything you do.", "We're dedicated to developing breakthrough technologies and quality products that enrich people's lives.", "We hire top graduates from exceptional schools who can work together to solve problems others can't.", "We have a casual environment, excellent benefits, and all the free snacks you can eat!", "We use a fact-based, analytical approach to improve performance.", "You should work here if you believe helping people is an important mission. And a meaningful one."];
+
+var benefits = ["all the free snacks you can eat", "weekly catering", "access to our gym", "frequent board game nights", "a spacious, naturally lit office", "monthly Uber, wellness, and gym benefits"];
+
+var impressive_fact = ["We are among the world's most progressive enterprises.", "Our principals are internationally recognized experts, and we have strong partnerships with leading academics.", "We are the fastest growing player in our space.", "Our founders have advanced degrees in Computer Science from MIT, Stanford, and Cornell.", "We're founded by former Google engineers.", "We've seen 40% growth mon/mon for the past year.", "We raised $2M Seed funding in 2012."];
+
+var investors = ["Accel Partners", "Atlas Venture", "Bain Capital", "Benchmark Capital", "Google Ventures", "Andreesen Horowitz", "Peter Thiel", "Khosla Ventures", "Bessemer Ventures", "Charles River Ventures", "DFJ", "Greylock Partners", "Matrix Partners"];
+//TODO: read career fair booklet descriptions
+
+
+//var nouns = [alarm,animal,aunt,bait,balloon,bath,bead,beam,bean,bedroom,boot,bread,brick,brother,camp,chicken,children,crook,deer,dock,doctor,downtown,drum,dust,eye,family,father,fight,flesh,food,frog,goose,grade,grandfather,grandmother,grape,grass,hook,horse,jail,jam,kiss,kitten,light,loaf,lock,lunch,lunchroom,meal,mother,notebook,owl,pail,parent,park,plot,rabbit,rake,robin,sack,sail,scale,sea,sister,soap,song,spark,space,spoon,spot,spy,summer,tiger,toad,town,trail,tramp,tray,trick,trip,uncle,vase,winter,water,week,wheel,wish,wool,yard,zebra];
+
+var word_components = ['alarm', 'animal', 'aunt', 'bait', 'balloon', 'bath', 'bead', 'beam', 'bean', 'bedroom', 'boot', 'bread', 'brick', 'brother', 'camp', 'chicken', 'children', 'crook', 'deer', 'dock', 'doctor', 'downtown', 'drum', 'dust', 'eye', 'family', 'father', 'fight', 'flesh', 'food', 'frog', 'goose', 'grade', 'grape', 'grass', 'hook', 'horse', 'jail', 'jam', 'kiss', 'kitten', 'light', 'loaf', 'lock', 'lunch', 'meal', 'mother', 'notebook', 'owl', 'pail', 'parent', 'park', 'plot', 'rabbit', 'rake', 'robin', 'sack', 'sail', 'scale', 'sea', 'sister', 'soap', 'song', 'spark', 'space', 'spoon', 'spot', 'spy', 'summer', 'tiger', 'toad', 'town', 'trail', 'tramp', 'tray', 'trick', 'trip', 'uncle', 'vase', 'winter', 'water', 'week', 'wheel', 'wish', 'wool', 'yard', 'zebra', 'Bay', 'Bliss', 'Bloom', 'Blithe', 'Dove', 'Faith', 'Gem', 'Glow', 'Grace', 'Grey', 'Heart', 'Hope', 'Jewel', 'June', 'Lake', 'Lane', 'Love', 'May', 'Mist', 'Muse', 'Myth', 'Oath', 'Peach', 'Pearl', 'Poem', 'Rain', 'Sage', 'Sky', 'Snow', 'Song', 'Teal', 'True', 'Vow', 'Wish', 'Wren', 'Cloud', 'Cove', 'Dew', 'Dream', 'Elm', 'Fen', 'Gift', 'Glade', 'Neve', 'Oak', 'Peace', 'Pear', 'Plum', 'Storm', 'Tide', 'Truth', 'Wave', 'bid', 'big', 'bill', 'bit', 'brick', 'bridge', 'bring', 'chill', 'chin', 'cliff', 'cling', 'did', 'dig', 'dim', 'dip', 'dish', 'ditch', 'drift', 'drill', 'drink', 'fifth', 'fill', 'film', 'fish', 'fist', 'fit', 'fix', 'gift', 'glimpse', 'grim', 'grin', 'grip', 'hid', 'hill', 'him', 'hint', 'his', 'hit', 'if', 'ill', 'in', 'inch', 'ink', 'inn', 'is', 'it', 'kick', 'kill', 'king', 'kiss', 'knit', 'lick', 'lift', 'limb', 'link', 'lip', 'list', 'midst', 'milk', 'mill', 'miss', 'mist', 'pick', 'pig', 'pin', 'pinch', 'pink', 'pit', 'pitch', 'prince', 'print', 'quick', 'quit', 'rib', 'rich', 'rid', 'ridge', 'ring', 'risk', 'shift', 'ship', 'sick', 'silk', 'sin', 'since', 'sing', 'sink', 'sit', 'six', 'sixth', 'skill', 'skin', 'slip', 'spin', 'split', 'stick', 'stiff', 'still', 'sting', 'swift', 'swim', 'swing', 'thick', 'thin', 'thing', 'think', 'this', 'thrill', 'till', 'tin', 'tip', 'trick', 'trim', 'trip', 'twig', 'twin', 'twist', 'which', 'whip', 'width', 'will', 'wilt', 'win', 'wind', 'the', 'noun', 'wing', 'wink', 'wish', 'wit', 'witch', 'with', 'build', 'built', 'give', 'live', 'bee', 'beef', 'breed', 'breeze', 'cheek', 'cheese', 'creek', 'creep', 'deed', 'deep', 'fee', 'feed', 'feel', 'feet', 'fleet', 'free', 'freeze', 'geese', 'Greece', 'Greek', 'green', 'greet', 'heed', 'heel', 'keep', 'keen', 'knee', 'kneel', 'meet', 'need', 'peep', 'queen', 'reed', 'reel', 'screen', 'see', 'seed', 'seek', 'seem', 'seen', 'sheep', 'sheet', 'sleep', 'sleeve', 'speech', 'steel', 'steep', 'street', 'sweep', 'sweet', 'teeth', 'thee', 'three', 'tree', 'weed', 'week', 'weep', 'wheel', 'beam', 'bean', 'beast', 'beat', 'breathe', 'cease', 'cheap', 'cheat', 'clean', 'cream', 'deal', 'dream', 'ease', 'east', 'eat', 'feast', 'gleam', 'heal', 'heap', 'heat', 'lead', 'leaf', 'league', 'lean', 'leap', 'least', 'mean', 'meat', 'neat', 'pea', 'peace', 'peach', 'peak', 'plead', 'please', 'preach', 'reach', 'read', 'real', 'scream', 'sea', 'seal', 'seat', 'speak', 'steal', 'steam', 'stream', 'tea', 'teach', 'team', 'treat', 'weak', 'weave', 'wheat', 'wreath', 'key', 'scheme', 'these', 'be', 'he', 'me', 'she', 'we', 'chief', 'field', 'grief', 'piece', 'priest', 'shield', 'shriek', 'thief', 'yield', 'seize', 'bed', 'bell', 'bench', 'bend', 'bent', 'best', 'bet', 'bless', 'cell', 'cent', 'check', 'chest', 'crept', 'debt', 'deck', 'den', 'dense', 'depth', 'desk', 'dress', 'dwell', 'edge', 'egg', 'else', 'end', 'fed', 'fell', 'felt', 'fence', 'fetch', 'fled', 'flesh', 'French', 'fresh', 'fret', 'gem', 'get', 'guess', 'guest', 'hedge', 'held', 'hell', 'help', 'hen', 'hence', 'jest', 'kept', 'left', 'leg', 'lend', 'length', 'lent', 'less', 'lest', 'let', 'melt', 'men', 'mend', 'met', 'nest', 'next', 'pen', 'pet', 'pledge', 'press', 'quest', 'red', 'rent', 'rest', 'scent', 'self', 'sell', 'send', 'sense', 'sent', 'set', 'sex', 'shed', 'sketch', 'slept', 'smell', 'spell', 'spend', 'spent', 'stem', 'step', 'strength', 'swell', 'swept', 'tell', 'tempt', 'ten', 'tend', 'tent', 'tenth', 'test', 'them', 'then', 'thence', 'twelve', 'vest', 'well', 'went', 'wept', 'west', 'wet', 'when', 'whence', 'wreck', 'yell', 'yes', 'yet', 'bread', 'breast', 'breath', 'dead', 'death', 'head', 'health', 'lead', 'the', 'element', 'read', '(past)', 'realm', 'sweat', 'thread', 'tread', 'wealth', 'friend', 'said', 'says'];
+var er_words  = ['attainder', 'atelier', 'bickerer', 'collier', 'distemper', 'farrier', 'freethinker', 'micrometer', 'muleteer', 'necromancer', 'nether', 'outrigger', 'pamphleteer', 'pentameter', 'solder', 'Burgher', 'dissever', 'philander', 'accouter', 'brier', 'centiliter', 'cloister', 'clothier', 'domineer', 'encumber', 'engender', 'filibuster', 'furrier', 'fishmonger', 'gossamer', 'lawmaker', 'lever', 'liner', 'marauder', 'patter', 'provender', 'roisterer', 'scrivener', 'seer', 'soothsayer', 'spinster', 'stickler', 'vaporizer', 'flag-officer', 'geometer', 'arbiter', 'canker', 'choler', 'censer', 'chandelier', 'chronometer', 'couturier', 'voltmeter', 'advertiser', 'alder', 'aver', 'barrister', 'batter', 'breaker', 'brigadier', 'commandeer', 'mountaineer', 'mover', 'mugger', 'murder', 'mutter', 'partner', 'powder', 'prayer', 'preacher', 'prefer', 'quarter', 'quitter', 'refer', 'scatter', 'settler', 'sheer', 'shelter', 'shiver', 'shoulder', 'sinker', 'slender', 'sober', 'soldier', 'splinter', 'steer', 'taper', 'taxpayer', 'toaster', 'tracer', 'traveler', 'twister'];
+
+function rand_range(max) {
+    "use strict";
+    return Math.floor(Math.random() * (max + 1));
+}
+
+function fresh(array, numIgnored) {
+    "use strict";
+    var index = rand_range(array.length - 2 - numIgnored) + 1 + numIgnored, selection = array[index];
+    array[index] = array[0];
+    array[0] = array[1];
+    array[1] = selection;
+    return selection;
+}
+
+function capitaliseFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function story_interested(clicked_id) {
+	document.getElementById(clicked_id).parentNode.style.color = "Green";
+}
+
+function story_notInterested(clicked_id) {
+	document.getElementById(clicked_id).parentNode.style.color = "Red";
+	for(var i = 0; i < 10; i++) {
+		story();
+	}
+}
+
+function get_startup_name() {
+	var rand = rand_range(3);
+	if(rand == 0) {
+		return capitaliseFirstLetter(fresh(word_components, 1)) + capitaliseFirstLetter(fresh(word_components, 1));
+	} else if(rand == 1) {
+		var er_word = fresh(er_words, 1);
+		return capitaliseFirstLetter( er_word.substr(0, er_word.length-2).concat('r') );
+	} else if(rand == 2){
+		return capitaliseFirstLetter( fresh(word_components, 1) ).concat('.io');
+	} else {
+		var raw = fresh(word_components, 1);
+		if( rand_range(1) == 0) {
+			raw = raw + capitaliseFirstLetter(fresh(word_components, 1));
+		}
+		var first = raw.substring(0, raw.length-2);
+		var second = raw.substring(raw.length-2, raw.length);
+		return capitaliseFirstLetter( first + '.' + second );
+	}
+}
+
+function cut(str, cutStart, cutEnd){
+  return str.substr(0,cutStart) + str.substr(cutEnd+1);
+}
+
+function story() {
+    "use strict";
+    var last, name, description, main = document.getElementById('main');
+    t += 1;
+    last = document.createElement('div');
+    last.appendChild(document.createElement('br'));
+    last.appendChild(document.createElement('br'));
+    name = get_startup_name();
+    var impressive = fresh(impressive_fact, 1) + " Our investors include " + fresh(investors, 2) + " and " + fresh(investors, 2) + ".";
+    
+    description = "We are a " + fresh(company_description_adjectives, 2) + ", " + fresh(company_description_adjectives, 2) + " " + fresh(company_description_nouns, 1) + " startup. " + impressive + " We are looking for a " + fresh(desired_adjectives, 1) + ", " + fresh(desired_adjectives, 1) + " " + fresh(job_position, 1) + " who is skilled in " + fresh(desired_skills, 2) + ", " + fresh(desired_skills, 2) + ", and " + fresh(desired_skills, 2) + ". In addition to a competitive salary, we offer " + fresh(benefits, 1) + ".";
+    
+    var mission = fresh(mission_statement, 2);
+    var location = " " + fresh(job_location, 1);
+    var name_span = document.createElement('span');
+    name_span.style.fontWeight = 'bold';
+    name_span.appendChild(document.createTextNode(name));
+    last.appendChild(name_span);
+    var location_span = document.createElement('span');
+    location_span.style.color = 'grey';
+    location_span.style.fontSize = '12px';
+    location_span.appendChild(document.createTextNode(location));
+    last.appendChild(location_span);
+    last.appendChild(document.createElement('br'));
+    last.appendChild(document.createTextNode(description));
+    last.appendChild(document.createElement('br'));
+    last.appendChild(document.createElement('br'));
+    last.appendChild(document.createTextNode(mission));
+    last.appendChild(document.createElement('br'));
+    
+    var interestedButton = document.createElement('button');
+    interestedButton.setAttribute('id', 'yes' + t);
+    interestedButton.innerHTML = "Interested";
+    interestedButton.setAttribute('onclick', 'story_interested(this.id)');
+    last.appendChild(interestedButton);
+    var notInterestedButton = document.createElement('button');
+    notInterestedButton.setAttribute('id', 'no' + t);
+    notInterestedButton.innerHTML = "Not Interested";
+    notInterestedButton.setAttribute('onclick', 'story_notInterested(this.id)');
+    last.appendChild(notInterestedButton);
+    
+    main.appendChild(last);
+}
+function produce_stories() {
+    "use strict";
+    story();
+    setInterval(story, 1000);
+}</script>
+  <title>Now Hiring!</title>
+</head>
+<body onload="produce_stories();">
+<div style="float:right; background:#999; margin-left:6px; border-left:thin #000 solid; border-bottom:thin #000 solid; padding:6px">
+<div><br>Now Hiring<br />by Ben Reynolds</div>
+</div>
+<div id="main">
+</div>
+</body>
+</html>
+
+
